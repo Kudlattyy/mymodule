@@ -9,3 +9,7 @@ services:
     public: true
     tags:
       - { name: form.type }
+
+  prestashop.module.mymodule.form.configuration_text_data_configuration:
+    class: PrestaShop\Module\mymodule\Form\ConfigurationTextDataConfiguration
+      arguments: ['@prestashop.adapter.legacy.configuration']  
