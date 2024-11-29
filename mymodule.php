@@ -39,5 +39,13 @@ class MyModule extends Module
         );
     }
 
+    public function getContent()
+    {
+        $route = $this->get('router')->generate('configuration_form_simple');
+        Tools::redirectAdmin($route);
+    }
+
 }
+
+
 

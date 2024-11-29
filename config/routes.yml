@@ -1,0 +1,8 @@
+demo_configuration_form_simple:
+  path: /mymodule/configuration
+  methods: [GET, POST]
+  defaults:
+    _controller: 'PrestaShop\Module\mymodule\Controller\ConfigurationController::index'
+    # Needed to work with tab system
+    _legacy_controller: Adminmymodule
+    _legacy_link: Adminmymodule 
