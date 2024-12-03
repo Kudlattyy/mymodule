@@ -1,0 +1,28 @@
+services:
+  _defaults:
+    public: true
+
+  prestashop.module.mymodule.form.type.configuration_text:
+    class: 'PrestaShop\Module\mymodule\Form\ConfigurationFormType'
+    parent: "form.type.translatable.aware"
+    public: true
+    tags:
+      - { name: form.type }
+
+  prestashop.module.mymodule.form.configuration_text_data_configuration:
+    class: 'PrestaShop\Module\mymodule\Form\ConfigurationTextDataConfiguration'
+    arguments: ["@prestashop.adapter.legacy.configuration"]
+
+  prestashop.module.mymodule.form.configuration_text_form_data_provider:
+    class: 'PrestaShop\Module\mymodule\Form\ConfigurationTextFormDataProvider'
+    arguments:
+      - "@prestashop.module.mymodule.form.configuration_text_data_configuration"
+
+  prestashop.module.mymodule.form.configuration_text_form_data_handler:
+    class: 'PrestaShop\PrestaShop\Core\Form\Handler'
+    arguments:
+      - "@form.factory"
+      - "@prestashop.core.hook.dispatcher"
+      - "@prestashop.module.mymodule.form.configuration_text_form_data_provider"
+      - 'PrestaShop\Module\mymodule\Form\ConfigurationFormType'
+      - "configuration"

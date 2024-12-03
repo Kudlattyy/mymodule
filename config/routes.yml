@@ -1,0 +1,7 @@
+configuration_form_simple:
+  path: /mymodule/configuration
+  methods: [GET, POST]
+  defaults:
+    _controller: 'PrestaShop\Module\mymodule\Controller\ConfigurationController::index'
+    _legacy_controller: AdminMyModule
+    _legacy_link: AdminMyModule

@@ -19,6 +19,12 @@ class MyModule extends Module
         $this->confirmUninstall = $this->trans('Are you sure you want to uninstall?', [], 'Modules.MyModule.Admin');
     }   
 
+    public function getContent()
+    {
+        $route = $this->get('router')->generate('demo_configuration_form_simple');
+        Tools::redirectAdmin($route);
+    }
+
     public function install()
     {
         if (Shop::isFeatureActive()) {
@@ -39,5 +45,9 @@ class MyModule extends Module
         );
     }
 
+  
+
 }
+
+
 
