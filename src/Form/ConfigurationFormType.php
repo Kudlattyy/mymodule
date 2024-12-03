@@ -18,4 +18,4 @@ class ConfigurationFormType extends TranslatorAwareType
                 'help' => $this->trans('Maximum 32 characters', 'Modules.mymodule.Admin'),
             ]);
     }
-}       
+}           

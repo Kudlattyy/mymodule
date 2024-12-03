@@ -24,7 +24,7 @@ class ConfigurationController extends FrameworkBundleAdminController
             if (empty($errors)) {
                 $this->addFlash('success', $this->trans('Successful update.', 'Admin.Notifications.Success'));
 
-                return $this->redirectToRoute('configuration_form_simple');
+                return $this->redirectToRoute('demo_configuration_form_simple');
             }
 
             $this->flashErrors($errors);
